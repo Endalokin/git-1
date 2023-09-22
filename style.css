@@ -79,6 +79,15 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 10px;
+}
+
+#duck img {
+    width: 100%;
+}
+
+#duck-img {
+    flex-shrink: 10;
 }
 
 #emergency {
@@ -121,3 +130,11 @@ footer {
     margin: 15px;
 }
 
+@media screen and (max-width : 600px) {
+    section {
+        padding: 60px 10%;
+    }
+    nav ul {
+        padding: 0px;
+    }
+}
