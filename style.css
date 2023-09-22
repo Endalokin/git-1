@@ -1,0 +1,123 @@
+
+body {
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+body > * {
+    background-color: grey;
+    margin: 10px 0px;
+}
+
+a {
+    color: black;
+}
+
+nav {
+    border: solid green;
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    margin: 0px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style: none;
+    padding: 10px;
+    background-color: white;
+    margin: 5px;
+}
+
+nav li * {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    padding: 60px;
+}
+
+main {
+    background-color: whitesmoke;
+}
+
+main > * {
+    background-color: grey;
+    margin: 10px 0px;
+
+}
+
+section {
+    padding: 80px 20%;
+}
+
+button {
+    padding: 10px 30px;
+    margin: 10px;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+#duck {
+    display: flex;
+    justify-content: space-between;
+}
+
+#duck div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#emergency {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-container > div {
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+#contact > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-input > * {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.git-avatar {
+    width: 50px;
+    margin: 15px;
+}
+
