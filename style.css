@@ -1,48 +1,96 @@
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/* body {
+	line-height: 1;
+} */
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End of CSS reset */
+
+/* Import of fonts */
+
+@font-face {
+    font-family: Fredericka;
+    src: url(fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf);
+}
+
+/*General settings */
+
 body {
     background-color: whitesmoke;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 130%;
+    --main-color: green;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1, h2 {
+    font-family: 'Fredericka';
+/*     line-height: 130%; */ /* warum muss ich das hier setzen, wenn es doch in body gesetzt ist??? */
+}
+
+h1 {
+    font-size: 64px;
+    margin: 48px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px green;
+}
+
+h2 {
+    font-size: 32px;
+    margin: 24px;
 }
 
 body > * {
     background-color: grey;
     margin: 10px 0px;
-}
-
-a {
-    color: black;
-}
-
-nav {
-    border: solid green;
-    display: flex;
-    justify-content: space-between;
-    background-color: lightgray;
-    margin: 0px;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-between;
-}
-
-nav li {
-    list-style: none;
-    padding: 10px;
-    background-color: white;
-    margin: 5px;
-}
-
-nav li * {
-    text-decoration: none;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 0px;
-    padding: 60px;
 }
 
 main {
@@ -55,6 +103,10 @@ main > * {
 
 }
 
+a {
+    color: black;
+}
+
 section {
     padding: 80px 20%;
 }
@@ -62,6 +114,77 @@ section {
 button {
     padding: 10px 30px;
     margin: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+    box-shadow: inset 5px 5px 10px rgb(52, 52, 52); /* warum wird das nicht angezeigt? */
+}
+
+/*warum haben die Buttons einen Hover- und Active-Effekt, obwohl ich keinen in diesem CSS-Element eingestellt habe */
+
+
+/* Special Elements */
+
+.second-theme {
+    background-color: #1B2024;
+    color: #FFC6AA; 
+}
+
+nav {
+    border: solid green;
+    background-color: #74D96B;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    overflow: auto;
+    padding: 10px;
+}
+
+nav::-webkit-scrollbar {
+    height: 10px;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background: #555555;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style: none;
+    padding: 10px 15px;
+    background-color: green;
+    margin: 5px;
+    border-radius: 50px;
+}
+
+nav li * {
+    text-decoration: none;
+    color: white;
+}
+
+nav li:hover {
+    font-family: 'Fredericka';
+    font-weight: 1000;
+    background-color: white;
+}
+
+nav li:active {
+    box-shadow: inset 2px 2px 5px, inset -2px -2px 5px  #1B2024;
+}
+
+nav li:hover * {
+    color: green;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    padding: 60px;
 }
 
 footer {
@@ -87,7 +210,8 @@ footer {
 }
 
 #duck-img {
-    flex-shrink: 10;
+    flex-shrink: 1;
+    flex-grow:4;
 }
 
 #emergency {
@@ -109,6 +233,23 @@ footer {
     aspect-ratio: 1/1;
 }
 
+.grid-container > div:hover {
+    background-color: var(--main-color);
+    font-family: 'Fredericka';
+    color: white;
+    font-weight: bolder;
+    box-shadow: 5px 5px 10px rgb(52, 52, 52);
+}
+
+.grid-container > div:hover * {
+    font-size: 28px;
+    line-height: normal;
+}
+
+.grid-container > div:active {
+    box-shadow: inset 5px 5px 10px rgb(52, 52, 52);
+}
+
 #contact > * {
     display: flex;
     flex-direction: column;
@@ -117,6 +258,14 @@ footer {
 
 .contact-input > * {
     width: 100%;
+}
+
+form *:not(button) {
+    border-color: #FFC6AA;
+}
+
+form *:not(button):focus {
+    outline: solid var(--main-color);
 }
 
 footer {
