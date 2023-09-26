@@ -29,9 +29,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-/* body {
+body {
 	line-height: 1;
-} */
+}
 ol, ul {
 	list-style: none;
 }
@@ -59,12 +59,15 @@ table {
 
 /*General settings */
 
+:root {
+    --main-color: green;
+}
+
 body {
     background-color: whitesmoke;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 130%;
-    --main-color: green;
 }
 
 p {
