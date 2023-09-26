@@ -67,7 +67,7 @@ body {
     background-color: whitesmoke;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 130%;
+    line-height: 1.3;
 }
 
 p {
@@ -76,7 +76,20 @@ p {
 
 h1, h2 {
     font-family: 'Fredericka';
-/*     line-height: 130%; */ /* warum muss ich das hier setzen, wenn es doch in body gesetzt ist??? */
+    
+}
+
+p {
+    animation: unblur 10s 0s 1;
+}
+
+@keyframes unblur {
+    from {
+        text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+    }
+    to {
+        text-shadow: 0;
+    }
 }
 
 h1 {
@@ -84,6 +97,13 @@ h1 {
     margin: 48px;
     text-transform: uppercase;
     text-shadow: 2px 2px green;
+    transition-property: letter-spacing, transform;
+    transition-duration: 2s;
+}
+
+h1:hover {
+    letter-spacing: 16px;
+    transform:rotate(350deg);
 }
 
 h2 {
@@ -119,11 +139,15 @@ button {
     margin: 10px;
     color: var(--main-color);
     font-weight: bold;
-    box-shadow: inset 5px 5px 10px rgb(52, 52, 52); /* warum wird das nicht angezeigt? */
+    border: 0px;
 }
 
-/*warum haben die Buttons einen Hover- und Active-Effekt, obwohl ich keinen in diesem CSS-Element eingestellt habe */
+button:active {
+    box-shadow: inset 1px 1px 5px green;
+    -moz-box-shadow: inset 1px 1px 5px green;
+}
 
+/*??? warum haben die Buttons einen Hover- und Active-Effekt, obwohl ich keinen in diesem CSS-Element eingestellt habe. Auch geht der active-Effekt nicht weg, obwohl ich einen anderen active-Effekt eingestellt habe. */
 
 /* Special Elements */
 
@@ -210,6 +234,25 @@ footer {
 
 #duck img {
     width: 100%;
+    animation: appear 5s 0s 1, disappear 5s 5s 1, appear 5s 10s 1;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 #duck-img {
@@ -242,6 +285,16 @@ footer {
     color: white;
     font-weight: bolder;
     box-shadow: 5px 5px 10px rgb(52, 52, 52);
+    animation: rotate 0.5s 0s forwards;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-5deg);
+    }
 }
 
 .grid-container > div:hover * {
